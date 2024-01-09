@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/realestate/static/css/main.26f8d576.css",
+    "main.js": "/realestate/static/js/main.7a7e4d5a.js",
+    "static/media/img5.avif": "/realestate/static/media/img5.fb4a940aedb4843e178e.avif",
+    "static/media/img6.avif": "/realestate/static/media/img6.20570f35d34e833f63e4.avif",
+    "static/media/img3.avif": "/realestate/static/media/img3.8d6ee61f8db6f29d93d7.avif",
+    "static/media/img2.avif": "/realestate/static/media/img2.2caec64e5e5835078fc9.avif",
+    "static/media/img1.avif": "/realestate/static/media/img1.0c78ad17965759e2741e.avif",
+    "static/media/img4.avif": "/realestate/static/media/img4.9e9233ce9de82cd1bbaa.avif",
+    "index.html": "/realestate/index.html",
+    "main.26f8d576.css.map": "/realestate/static/css/main.26f8d576.css.map",
+    "main.7a7e4d5a.js.map": "/realestate/static/js/main.7a7e4d5a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.26f8d576.css",
+    "static/js/main.7a7e4d5a.js"
+  ]
+}
