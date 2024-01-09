@@ -1,0 +1,43 @@
+$sizes : (
+    'sm' : 480px,
+    'nm' : 768px,
+    'lg' : 1024px,
+    'xl' : 1280px,
+    'xxl' : 1780px 
+);
+
+@mixin sm-screen{
+    @media (max-width : map-get($sizes, 'sm')){
+        @content;
+    }
+};
+
+@mixin nm-screen{
+    @media (max-width : map-get($sizes, 'nm')){
+        @content;
+    }
+};
+
+@mixin lg-screen{
+    @media (max-width : map-get($sizes, 'lg')){
+        @content;
+    }
+};
+
+@mixin xl-screen{
+    @media (max-width : map-get($sizes, 'xl')){
+        @content;
+    }
+};
+
+@mixin xxl-screen{
+    @media (max-width : map-get($sizes, 'xxl')){
+        @content;
+    }
+};
+
+@mixin custom-screen($breakpoint: 2000px){
+    @media (max-width : $breakpoint){
+        @content;
+    }
+};

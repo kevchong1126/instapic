@@ -1,0 +1,28 @@
+@use '../scss/mixins' as *;
+@use '../scss/variables' as *;
+@use '../scss/breakpoints' as *;
+
+.container{
+    @include container;
+    margin-top: $spacing-l-6;
+    @include quicksand;
+
+    @include custom-screen($breakpoint: 860px){
+        margin-top: $spacing-l-4;
+    }
+
+    .content{
+        @include content;
+
+        .title{
+            text-align: center;
+            font-size: $txt-l-4;
+            margin-bottom: $spacing-nm-1;
+        }
+
+        .results{
+            font-size: $txt-nm-2;
+            text-align: right;
+        }
+    }
+}

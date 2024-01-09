@@ -1,0 +1,64 @@
+@use '../../scss/mixins' as *;
+@use '../../scss/variables' as *;
+
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-auto-rows: 10px;
+    gap: $spacing-sm-3;
+    font-size: $txt-sm-3;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.wrapper{
+    overflow: hidden;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    
+    &.cardL{
+        grid-row-end: span 22;
+    }
+
+    &.cardN{
+        grid-row-end: span 18;
+    }
+
+    &.cardS{
+        grid-row-end: span 14;
+    }
+
+    .imgContainer{
+        width: 100%;
+        height: 85%;
+        background-color: $gray2;
+        animation: anim 1s linear infinite;
+        margin-bottom: $spacing-sm-1;
+    }
+
+    .alt{
+        width: 100%;
+        height: 1rem;
+        background-color: $gray2;
+        animation: anim 1s linear infinite;
+        margin-bottom: $spacing-sm-1;
+    }
+
+    .author{
+        width: 50%;
+        height: 0.7rem;
+        background-color: $gray2;
+        animation: anim 1s linear infinite;    
+    }
+}
+
+@keyframes anim{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.7;
+    }
+}

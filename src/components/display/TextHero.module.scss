@@ -1,0 +1,75 @@
+@use '../../scss/mixins' as *;
+@use '../../scss/variables' as *;
+@use '../../scss/breakpoints' as *;
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    margin-top: $spacing-l-5;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    padding-inline: $spacing-sm-4;
+    @include quicksand;
+
+    @include custom-screen($breakpoint: 760px){
+        flex-direction: column;
+        align-items: center;
+        gap: $spacing-sm-2;
+    }
+
+    .left{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        @include custom-screen($breakpoint: 760px){
+            align-items: center;
+            width: 100%;
+        }
+
+        .title{
+            font-size: $txt-l-2;
+            font-weight: 600;
+            margin-bottom: $spacing-sm-4;
+
+            @include custom-screen($breakpoint: 760px){
+                text-align: center;
+            }
+        }
+
+        .caption{
+            margin-bottom: $spacing-nm-2;
+            font-size: $txt-nm-2;
+            font-weight: bold;
+
+            @include custom-screen($breakpoint: 760px){
+                text-align: center
+            }
+        }
+
+        .btn{
+            @include btn;
+            
+        }
+    }
+
+    .right{
+        width: 50%;
+
+        @include custom-screen($breakpoint: 760px){
+            width: 100%;
+        }
+
+        .imgContainer{
+            width: 100%;
+            height: 100%;
+
+            img{
+                @include img;
+                object-fit: cover;
+            }
+        }
+    }
+}

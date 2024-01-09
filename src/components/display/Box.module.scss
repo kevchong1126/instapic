@@ -1,0 +1,48 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+@use "../../scss/breakpoints" as *;
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: $spacing-sm-2;
+    margin-top: $spacing-l-5;
+    @include quicksand;
+
+    @include custom-screen($breakpoint: 760px){
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box{
+        width: 100%;
+        height: 300px;
+        padding: $spacing-sm-4;
+        border-radius: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include custom-screen($breakpoint: 760px){
+            width: 50%;
+            height: 350px;
+        }
+
+        @include custom-screen($breakpoint: 600px){
+            width: 60%;
+            
+        }
+
+        .heading{
+            font-size: $txt-nm-4;
+            margin-bottom: $spacing-l-4;
+            font-weight: bold;
+        }
+
+        .text{
+            font-size: $txt-nm-1;
+            font-weight: bold;
+        }
+    }
+}

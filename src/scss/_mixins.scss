@@ -1,0 +1,63 @@
+@use './variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap');
+
+@mixin container{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+@mixin content{
+    width: 97%;
+    height: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+@mixin centerFlex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin centerAbsolute{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin transition($property: all, $duration: 0.3s, $ease: ease-in-out){
+    transition: $property $duration $ease;
+}
+
+@mixin btn{
+    padding: $spacing-sm-2 $spacing-nm-1;
+    color: $bg;
+    background-color: $txt;
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    @include transition;
+
+    &:hover{
+        background-color: $bg;
+        color: $txt;
+    }
+}
+
+@mixin quicksand{
+    font-family: 'Quicksand', sans-serif;
+
+};
+
+@mixin roboto{
+    font-family: 'Roboto Mono', monospace;
+}

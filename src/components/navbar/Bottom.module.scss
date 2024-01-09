@@ -1,0 +1,27 @@
+@use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
+@use '../../scss/breakpoints' as *;
+
+.wrapper{
+    width: 100%;
+    margin-top: $spacing-nm-1;
+    margin-bottom: $spacing-sm-2;
+
+    @include lg-screen{
+        font-size: $txt-sm-2;
+    }
+
+    @include custom-screen($breakpoint: 860px){
+        display: none;
+    }
+
+    .list{
+        display: flex;
+        justify-content: flex-start;
+        gap: $spacing-nm-2;
+
+        li{
+            font-weight: 300;
+        }
+    }
+}

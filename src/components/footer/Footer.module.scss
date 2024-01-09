@@ -1,0 +1,100 @@
+@use '../../scss/mixins' as *;
+@use '../../scss/variables' as *;
+@use '../../scss/breakpoints' as *;
+
+.container{
+    @include container;
+    margin-top: $spacing-l-6;
+
+
+    .content{
+        @include content;
+        
+        .line{
+            width: 100%;
+            height: 1px;
+            background-color: $gray2;
+            margin-bottom: $spacing-nm-1;
+            margin-top: $spacing-nm-3;
+        }
+    }
+}
+
+
+.top{
+    display: flex;
+    justify-content: space-between;
+
+    @include custom-screen($breakpoint: 660px){
+        flex-direction: column;
+        align-items: center;
+        gap: $spacing-nm-4;
+    }
+
+    .main{
+        width: 33%;
+
+        .link{
+            margin-top: $spacing-sm-4;
+        }
+
+        @include custom-screen($breakpoint: 760px){
+            width: 40%;
+            
+        }
+    }
+
+    .list{
+        
+        @include custom-screen($breakpoint: 760px){
+            width: 40%;
+        }
+    }
+
+    .header{
+        font-weight: bold;
+        margin-bottom: $spacing-sm-4;
+    }
+
+    .link{
+        font-weight: 300;
+        margin-bottom: $spacing-sm-3;
+    }
+}
+
+.bottom{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: $spacing-l-3;
+
+    @include custom-screen($breakpoint: 760px){
+        flex-direction: column;
+    }
+
+    .right{
+        display: flex;
+        gap: $spacing-sm-4;
+
+        @include custom-screen($breakpoint: 760px){
+            flex-direction: column;
+            align-items: center;
+            margin-top: $spacing-nm-1;
+        }
+
+        .logo{
+            color: $gray2;
+            font-size: $txt-nm-3;
+        }
+    }
+
+    .left{
+        display: flex;
+        gap: $spacing-nm-2;
+        color: $gray2;
+        
+        @include custom-screen($breakpoint: 760px){
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

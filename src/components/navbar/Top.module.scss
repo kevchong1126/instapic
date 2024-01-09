@@ -1,0 +1,83 @@
+@use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
+@use '../../scss/breakpoints' as *;
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm-3;
+    width: 50%;
+
+    @include nm-screen{
+        width: 100%;
+    }
+
+    .logo{
+        font-size: $txt-nm-2;
+        font-weight: bold;
+    }
+
+    .inputContainer{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background-color: $gray1;
+        border-radius: 3rem;
+        overflow: hidden;
+
+        .icon{
+            font-size: $txt-l-1;
+            padding-left: $spacing-sm-1;
+        }
+
+        form{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+
+            .input{
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding-block: $spacing-sm-2;
+                border: none;
+                background-color: transparent;
+                color: $txt;
+                outline: none;
+                padding-left: $spacing-sm-2;
+
+                    &::placeholder{
+                        color: $txt;
+                        @include quicksand;
+                    }
+                }
+        }
+        
+    }
+}
+
+.right{
+    display: flex;
+    align-items: center;
+    gap: $spacing-nm-4;
+    font-size: $txt-sm-3;
+
+    @include nm-screen{
+        display: none;
+    }
+
+    .plus{
+        color: $blue;
+    }
+
+}
+

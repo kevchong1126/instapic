@@ -1,0 +1,23 @@
+@use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
+@use '../../scss/breakpoints' as *;
+
+.container{
+    width: 100%;
+    height: fit-content;
+    border: 1px solid $gray1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $bg;
+    z-index: 999;
+
+    @include custom-screen($breakpoint: 860px){
+        padding-bottom: $spacing-sm-3
+    }
+    .content{
+        @include content;
+        margin-top: $spacing-sm-2;
+    }
+}
+

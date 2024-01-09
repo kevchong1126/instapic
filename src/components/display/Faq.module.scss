@@ -1,0 +1,38 @@
+@use '../../scss/mixins' as *;
+@use '../../scss/variables' as *;
+
+.wrapper{
+    width: 85%;
+    height: 100%;
+    margin-inline: auto;
+    margin-top: $spacing-l-5;
+    background-color: $gray1;
+    border-radius: 1.5rem;
+    padding: $spacing-nm-2 $spacing-sm-4;
+    @include quicksand;
+
+    .title{
+        font-size: $txt-l-3;
+        margin-bottom: $spacing-nm-4;
+    }
+
+    .questions{
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-nm-2;
+
+        .question{
+            padding-block: $spacing-nm-2;
+            border-bottom: 1px solid $gray2;
+
+            .heading{
+                font-size: $txt-nm-4;
+                margin-bottom: $spacing-nm-2;
+            }
+
+            .answer{
+                font-size: $txt-nm-1;
+            }
+        }
+    }
+}
