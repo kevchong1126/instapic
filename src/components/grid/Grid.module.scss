@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     
+
     .grid{
         display: grid;
         grid-template-columns: repeat(auto-fill, 300px);
@@ -14,5 +15,6 @@
         gap: $spacing-sm-3;
         font-size: $txt-sm-3;
         width: 100%;
+        justify-content: center;
     }
 }

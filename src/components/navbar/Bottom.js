@@ -1,10 +1,22 @@
 import React from 'react'
 import styles from './Bottom.module.scss'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Bottom = () => {
+
+  const active = ({isActive}) => {
+    return {
+      fontWeight: isActive ? 'bold' : 300,
+    }
+  }
+
   return (
     <div className={styles.wrapper}>
+        <div className={styles.main}>
+          <p className={styles.divider}><NavLink to={'/instapic'}  style={active}> For You </NavLink></p>
+          <p ><NavLink to={'/explore'} style={active}> Explore </NavLink></p>
+        </div>
+
         <ul className={styles.list}>
             <li><Link to={'/wallpaper'}> Wallpaper </Link></li>
             <li><Link to={'/minimalism'}> Minimalism </Link></li>

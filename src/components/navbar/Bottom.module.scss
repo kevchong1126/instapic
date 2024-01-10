@@ -6,22 +6,43 @@
     width: 100%;
     margin-top: $spacing-nm-1;
     margin-bottom: $spacing-sm-2;
-
-    @include lg-screen{
-        font-size: $txt-sm-2;
-    }
+    display: flex;
+    justify-content: space-between;
+    gap: $spacing-nm-2;
+    font-size: $txt-sm-2;
 
     @include custom-screen($breakpoint: 860px){
-        display: none;
+        justify-content: center;
     }
 
     .list{
         display: flex;
         justify-content: flex-start;
+        align-items: center;
         gap: $spacing-nm-2;
+        
+        @include lg-screen{
+            font-size: $txt-sm-1;
+        }
+        
+        @include custom-screen($breakpoint: 860px){
+            display: none;
+        }
 
         li{
             font-weight: 300;
+        }
+    }
+
+    .main{
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm-4;
+
+        .divider{
+            padding-right: $spacing-nm-1;
+            border-right: 1px solid $gray2;
+            white-space: nowrap;
         }
     }
 }

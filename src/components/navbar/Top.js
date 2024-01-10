@@ -18,7 +18,7 @@ const Top = () => {
   return (
     <div className={styles.wrapper}>
         <div className={styles.left}>
-            <p className={styles.logo}><Link to={'/'}>InstaPic</Link></p>
+            <p className={styles.logo}><Link to={'/instapic'}>InstaPic</Link></p>
             <div className={styles.inputContainer}>
                 <CiSearch className={styles.icon}/>
 
@@ -29,9 +29,9 @@ const Top = () => {
         </div>
 
         <ul className={styles.right}>
-            <li><Link to={'/favorite'}>Your Favorite</Link></li>
+            <li><Link to={'/favorite'}>Favorites</Link></li>
             <li><Link to={'/advertise'}>Advertise</Link></li>
-            <li className={styles.plus}><Link to={'/instapic'}>InstaPic+</Link></li>
+            <li className={styles.plus}><Link to={'/upgrade'}>InstaPic+</Link></li>
         </ul>
     </div>
   )

@@ -12,10 +12,10 @@ import Favorite from './pages/Favorite'
 const RoutesComponent = () => {
   return (
         <Routes>
-            <Route path='/' element={<Home />}></Route>
+            <Route path='/instapic' element={<Home />}></Route>
             <Route path='/explore' element={<Explore />} />
             <Route path='/advertise' element={<Advertise />} />
-            <Route path='/instapic' element={<Instapic />} />
+            <Route path='/upgrade' element={<Instapic />} />
             <Route path='/favorite' element={<Favorite />} />
             <Route path='/:query' element={<Search />} />
         </Routes>

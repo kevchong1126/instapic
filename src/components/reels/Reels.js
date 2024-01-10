@@ -28,11 +28,11 @@ const Reels = () => {
         if (observer.current) observer.current.disconnect();
         
         observer.current = new IntersectionObserver( entries => {
-            if (entries[0].isIntersecting && display >= posts.length-1 && hasMore){
+            if (entries[0].isIntersecting && display >= posts.length-1 && hasMore){console.log('fetching')
                 setPage( prev => prev + 1);
                 setDisplay( prev => prev + 5)
             }
-            else if (entries[0].isIntersecting && display < posts.length-1){
+            else if (entries[0].isIntersecting && display < posts.length-1){console.log('displaying')
                 setDisplay(prev => prev + 5)
             }
         });
@@ -41,9 +41,7 @@ const Reels = () => {
     }, [loading, hasMore, display])
 
     useEffect(() => {
-        
         if (controller.current) controller.current.abort();
-
         controller.current = new AbortController();
         const signal = controller.current.signal;
 
@@ -51,13 +49,13 @@ const Reels = () => {
             setLoading(true);
             
             try{
-                const responseVideo = await fetch(popularVideo + `?&page=${page}`, {
+                const responseVideo = await fetch(popularVideo + `?&page=${page}&per_page=20`, {
                     headers: {
                         Authorization: key 
                     },
                     signal
                 });
-
+                console.log('api')
                 const dataVideo = await responseVideo.json();
 
                 setPosts( prev => {

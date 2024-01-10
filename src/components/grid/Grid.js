@@ -24,11 +24,11 @@ const Grid = () => {
         if (observer.current) observer.current.disconnect();
         
         observer.current = new IntersectionObserver( entries => {
-            if (entries[0].isIntersecting && display >= posts.length-1 && hasMore){
+            if (entries[0].isIntersecting && display >= posts.length-1 && hasMore){console.log('fetch')
                 setPage( prev => prev + 1);
                 setDisplay( prev => prev + 5)
             }
-            else if (entries[0].isIntersecting && display < posts.length-1){
+            else if (entries[0].isIntersecting && display < posts.length-1){console.log('display')
                 setDisplay(prev => prev + 5)
             }
         });

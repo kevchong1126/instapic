@@ -17,6 +17,7 @@ body{
   height: 100%;
   color: $txt;
   font-size: $txt-sm-4;
+  overflow-x: hidden;
   @include roboto;
 }
 
