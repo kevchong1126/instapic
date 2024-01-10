@@ -14,7 +14,7 @@ const Bottom = () => {
     <div className={styles.wrapper}>
         <div className={styles.main}>
           <p className={styles.divider}><NavLink to={'/instapic'}  style={active}> For You </NavLink></p>
-          <p ><NavLink to={'/explore'} style={active}> Explore </NavLink></p>
+          <p ><NavLink to={'/explore'} style={active}> Reels </NavLink></p>
         </div>
 
         <ul className={styles.list}>
