@@ -46,7 +46,7 @@ const Video = ({card, idx}, ref) => {
   return (
     <div className={`${styles.wrapper} ${ht[idx%3]}`} ref={ref}>
         <div className={styles.imgContainer}>
-            <video autoPlay muted loop playsInline controls>
+            <video muted loop playsInline controls>
                 <source src={card.video_files[0].link} ></source>
             </video>
 

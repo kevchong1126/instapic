@@ -49,13 +49,13 @@ const Reels = () => {
             setLoading(true);
             
             try{
-                const responseVideo = await fetch(popularVideo + `?&page=${page}&per_page=20`, {
+                const responseVideo = await fetch(popularVideo + `?&page=${page}&per_page=80`, {
                     headers: {
                         Authorization: key 
                     },
                     signal
                 });
-                console.log('api')
+                
                 const dataVideo = await responseVideo.json();
 
                 setPosts( prev => {
@@ -141,7 +141,7 @@ const Card = React.forwardRef(({card}, ref) => {
         <div className={styles.section} ref={ref}>
             <div className={styles.cardContainer}>
                 <div className={styles.card}>
-                    <video autoPlay muted loop playsInline controls>
+                    <video muted loop playsInline controls>
                         <source src={card.video_files[0].link}></source>
                     </video>
                 </div>
