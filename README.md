@@ -1,6 +1,6 @@
-## Live Demo: https://kevchong1126.github.io/realestate/
+## Live Demo: https://kevchong1126.github.io/instapic/
 
-# Ibiza Real Estate
+# Instapic
 ### Social Media App
 
 Instapic is a social media website, that allows users to search for images and videos and download them. It displays posts in a masonry style, like Instagram. Also includes a section to watch videos like tiktok. Users can like the post, which will be stored in the 'favorites' page.
