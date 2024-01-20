@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import styles from './Card.module.scss'
 import { context } from '../../Context'
+import { Link } from 'react-router-dom'
 
 /*icons*/
 import { IoCloudDownloadOutline } from "react-icons/io5";
@@ -46,7 +47,9 @@ const Card = ({card, idx}, ref) => {
   return (
     <div className={`${styles.wrapper} ${ht[idx%3]}`} ref={ref}>
         <div className={styles.imgContainer}>
-            <img src={card.src.large} alt={card.alt}></img>
+            <Link to={'/photo/' + card.id}>
+                <img src={card.src.large} alt={card.alt}></img>
+            </Link>
 
             <div className={styles.downloadContainer}>
                 <FaHeart className={styles.logo} style={{color: find() ? 'red' : '#d1d1d1'}} onClick={like}/>

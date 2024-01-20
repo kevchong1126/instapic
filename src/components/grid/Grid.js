@@ -24,11 +24,11 @@ const Grid = () => {
         if (observer.current) observer.current.disconnect();
         
         observer.current = new IntersectionObserver( entries => {
-            if (entries[0].isIntersecting && display >= posts.length-1 && hasMore){console.log('fetch')
+            if (entries[0].isIntersecting && display >= posts.length-1 && hasMore){
                 setPage( prev => prev + 1);
                 setDisplay( prev => prev + 5)
             }
-            else if (entries[0].isIntersecting && display < posts.length-1){console.log('display')
+            else if (entries[0].isIntersecting && display < posts.length-1){
                 setDisplay(prev => prev + 5)
             }
         });
@@ -37,7 +37,7 @@ const Grid = () => {
     }, [loading, hasMore, display])
 
     useEffect(() => {
-        
+
         if (ctrPhoto.current) ctrPhoto.current.abort();
         if (ctrVideo.current) ctrVideo.current.abort();
 
@@ -67,7 +67,7 @@ const Grid = () => {
 
                 const dataVideo = await responseVideo.json();
                 const dataPhoto = await responsePhoto.json();
-
+                console.log(dataPhoto)
                 setPosts( prev => {
                     const joined = [...dataVideo.videos, ...dataPhoto.photos];
                     const shuffled = shuffle(joined);

@@ -1,5 +1,6 @@
 @use '../../scss/mixins' as *;
 @use '../../scss/variables' as *;
+@use '../../scss/breakpoints' as *;
 
 .wrapper{
     @include container;
@@ -7,6 +8,27 @@
     display: flex;
     justify-content: center;
     
+    .empty{
+        width: 100%;
+        min-height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1{
+            @include lg-screen{
+                font-size: $txt-nm-2;
+            }
+
+            @include nm-screen{
+                font-size: $txt-nm-1;
+            }
+
+            @include sm-screen{
+                font-size: $txt-sm-2;
+            }
+        }
+    }
 
     .grid{
         display: grid;

@@ -8,11 +8,14 @@ const Context = (prop) => {
     const popularVideo = 'https://api.pexels.com/videos/popular';
     const searchVideo = 'https://api.pexels.com/videos/search';
     const searchPhoto = 'https://api.pexels.com/v1/search';
+    const photoId = 'https://api.pexels.com/v1/photos/';
+    const videoId = 'https://api.pexels.com/videos/videos/';
+
     const [ favorites, setFavorites ] = useState([]);
 
     const obj = {
         key, popularPhoto, popularVideo, searchVideo, searchPhoto,
-        favorites, setFavorites
+        favorites, setFavorites, photoId, videoId
     };
     
     return (
