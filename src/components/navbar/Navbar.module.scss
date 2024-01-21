@@ -11,7 +11,8 @@
     left: 0;
     background-color: $bg;
     z-index: 999;
-
+    background-color: $bg;
+    
     @include custom-screen($breakpoint: 860px){
         padding-bottom: $spacing-sm-3
     }

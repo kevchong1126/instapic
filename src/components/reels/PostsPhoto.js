@@ -38,47 +38,32 @@ const PostsPhoto = () => {
     }, [loading, hasMore, display])
 
     useEffect(() => {
-        if (controllerId.current) controllerId.current.abort();
-        controllerId.current = new AbortController();
-        const signal = controllerId.current.signal;
-
-        const fetchPhoto = async () => {
-
-            try{
-
-                const responseId = await fetch(photoId + id, {
-                    headers: {
-                        Authorization: key 
-                    },
-                    signal
-                });
-
-                const dataId = await responseId.json();
-
-                setPosts( [dataId] );
-
-            }catch (err){
-                console.log(err.message);
-
-            }
-        };
-
-        fetchPhoto();
-
-        return () => {
-            controllerId.current.abort()
-        }
-    }, [id]);
-
-    useEffect(() => {
         if (controller.current) controller.current.abort();
+        if (controllerId.current) controllerId.current.abort();
+
+        controllerId.current = new AbortController();
         controller.current = new AbortController();
+
         const signal = controller.current.signal;
+        const signalId = controllerId.current.signal;
 
         const fetchPhoto = async () => {
             setLoading(true);
-            
-            try{console.log(page)
+            console.log('all')
+            try{
+                if (!posts.length) {
+                    const responseId = await fetch(photoId + id, {
+                        headers: {
+                            Authorization: key 
+                        },
+                        signalId
+                    });
+    
+                    const dataId = await responseId.json();
+    
+                    setPosts( [dataId] );
+                };
+
                 const responsePhoto = await fetch(popularPhoto + `?&page=${page}&per_page=80`, {
                     headers: {
                         Authorization: key 
@@ -106,7 +91,8 @@ const PostsPhoto = () => {
         fetchPhoto();
         
         return () => {
-            controller.current.abort()
+            controller.current.abort();
+            controllerId.current.abort()
         }
     }, [page, id]);
 
